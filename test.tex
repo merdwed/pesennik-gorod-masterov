@@ -1,0 +1,389 @@
+
+%for guitar tab
+\documentclass[fleqn,a5paper,12pt,twoside]{guitartabs}
+\geometry{left=20mm, top=10mm, right=10mm, bottom=10mm,nohead,nofoot}
+
+%Russian-specific packages
+%--------------------------------------
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{sectsty}
+%--------------------------------------
+\usepackage{subcaption}[]%для выравнивания картинок справа и слева
+\usepackage[rightcaption]{sidecap}%тоже для картиночек
+\usepackage{setspace}%для ужимки текста
+
+%---------------------------------------
+
+%-----------------------------
+%в пакете gtrcrd вместо H используется B
+%От лица себя скажу что это не удобно, поэтому я скачал пакет и заменил все B на H
+\usepackage{gtrcrd} % Words & Chords edition.
+\usepackage{guitarchordschemes} %аппликатуры аккордов
+\newcommand{\musSharp}{\texttt{\#}}
+\newcommand{\musVspace}{\vspace{2mm}}
+\newenvironment{musRepeat}{\left.\begin{matrix*}[l]}
+{\end{matrix*}\right\}\textup{2 раза}}
+\usepackage{mathtools}  %костыли для скобок
+\let\originalleft\left
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}%костыли по поводу пробелов вокруг скобок
+\newrobustcmd*\muschordscheme[1][]{\chordscheme[#1]\hspace{6mm}} %костыли по выравниванию аккордов
+\begin{document}
+\setlength{\mathindent}{0pt}%костыли
+\setlength{\jot}{0mm}%костыли для межстрочного интервала в математическом режиме
+\setlength{\parindent}{0mm}%убираем абзацные отступы
+\captionsetup[subfigure]{labelformat=empty} %убираем надписи под картинками
+\sectionfont{\LARGE}
+\sffamily
+
+ 
+%-----------------
+\setcounter{page}{0} % начать нумерацию с номера 0
+липовая страница, связанная с чётностью. Предназначена для двухстраничного режима просмотра. Удалить в финале!!!\\
+
+Версия песенника 3.1
+\begin{enumerate}
+\item Добавлены и удалены все песни по правкам от 28.03.2023 16:55 Кроме:
+\begin{itemize}
+\item «Не бывает» – жаворонки (на согласовании)
+\item Земной простор - походные (опечатка, есть в следопытских)
+\end{itemize}
+\item оглавление расширено ещё на одну страницу, т.к. стало слишком большим. (возможно вернуть размер перестановкой разделов и рассечением одного раздела на развороте)
+\item некоторые песни сов и лирики переставлены местами, чтобы выше были более популярные, а так же чтобы на развороте находились более сочетаемые песни.
+\item версия включает исправления редакции от 25.12.2022. Есть спорные моменты, см. ответный документ верстальщика
+\end{enumerate}
+Необходимо далее:
+\begin{enumerate}
+\item Проверить грамотность. (в том числе активизировать воинов буквы ё. Верстальщик за этим не следил)
+\item Уделить внимание самим аккордам. Не факт что все песни в правильных/удобных тональнастях, нужно призвать для этого гитаристов
+\item ещё раз проверить и согласовать текст последней страницы
+\item ровнять отступы, куплеты с припевами, переставлять местами песни ради лучшей читаемость (работа верстальщика)
+\end{enumerate}
+%--------------
+
+\newpage
+\addcontentsline{toc}{section}{Следопытские песни}%В оглавление
+\section*{\centerline{Следопытские песни}}
+\vspace{10mm}
+\begin{figure}[h]
+       \centering
+        \includegraphics[scale=0.45]{img/следопытские.png}
+\end{figure}
+\sidecaptionvpos{figure}{c}
+\begin{SCfigure}[50][b]
+\includegraphics[width=0.2\linewidth]{qr/следопытские.png}
+\caption*{Переходите по QR-коду, \\ чтобы послушать альбом в ВК}
+\end{SCfigure}
+\newpage
+
+\addcontentsline{toc}{subsection}{Будь готов}%В оглавление
+\subsection*{Будь готов}
+
+\addcontentsline{toc}{subsection}{Город Мастеров - Фокстрот}    %В оглавление
+\subsection*{Город Мастеров}
+  
+\addcontentsline{toc}{subsection}{Земной простор}%В оглавление
+\subsection*{Земной простор}
+ 
+\addcontentsline{toc}{subsection}{Утро в росе - Владимир Васильев}%В оглавление
+\subsection*{Утро в росе}
+ 
+\addcontentsline{toc}{section}{Лирика}%В оглавление
+\section*{\centerline{Лирика}}
+
+\addcontentsline{toc}{subsection}{Мой рок-н-ролл - Би-2}%В оглавление
+\subsection*{Мой рок-н-ролл}
+
+\addcontentsline{toc}{subsection}{Костёр - Машина Времени}%В оглавление
+\subsection*{Костёр}
+
+\addcontentsline{toc}{subsection}{Этот город - Браво}%В оглавление
+\subsection*{Этот город}
+
+\addcontentsline{toc}{subsection}{Моё сердце - Сплин}%В оглавление
+\subsection*{Моё сердце}
+
+\addcontentsline{toc}{subsection}{Конь - Любэ}%В оглавление
+\subsection*{Конь}
+
+\addcontentsline{toc}{subsection}{Дороги - Мельнциа}%В оглавление
+\subsection*{Дороги}
+ 
+\addcontentsline{toc}{subsection}{Как жаль - Браво}%В оглавление
+\subsection*{Как жаль} 
+ 
+\addcontentsline{toc}{subsection}{Просвистела - ДДТ}%В оглавление
+\subsection*{Просвистела}
+
+\addcontentsline{toc}{subsection}{Что такое осень - ДДТ}%В оглавление
+\subsection*{Что такое осень}
+
+\addcontentsline{toc}{subsection}{С чего начинается Родина - Марк Бернес}%В оглавление
+\subsection*{С чего начинается Родина}
+ 
+\addcontentsline{toc}{subsection}{Ты неси меня река - Любэ}%В оглавление
+\subsection*{Ты неси меня река}
+
+\addcontentsline{toc}{subsection}{Может знает лес - Любэ}%В оглавление
+\subsection*{Может знает лес}
+
+\addcontentsline{toc}{subsection}{Голубая стрела - Белая Гвардия}%В оглавление
+\subsection*{Голубая стрела}
+ 
+\addcontentsline{toc}{subsection}{Я подозвал коня - Виталий Черницкий}%В оглавление
+\subsection*{Я подозвал коня}
+ 
+\addcontentsline{toc}{subsection}{Вальс в ритме дождя - Ноях (Наум) Лисица}%В оглавление
+\subsection*{Вальс в ритме дождя}
+
+\addcontentsline{toc}{subsection}{А все кончается - Валерий Канер}%В оглавление
+\subsection*{А все кончается}
+ 
+\addtocontents{toc}{\protect\newpage}
+\addcontentsline{toc}{section}{Песни жаворонков}%В оглавление
+
+\addcontentsline{toc}{subsection}{Зеленая карета - А. Суханов(ст. О.Дриз пер. Г.Сапгир.)}%В оглавление
+\subsection*{Зеленая карета}
+ 
+\addcontentsline{toc}{subsection}{Что без чего не бывает - Васильев В.П. (ст. М. Пляцковский)}%В оглавление
+\subsection*{Что без чего не бывает}
+
+\addcontentsline{toc}{subsection}{Песня о звездах - А. Рыбников (ст. Юлий Ким)}%В оглавление
+\subsection*{Песня о звездах}
+ 
+\addcontentsline{toc}{subsection}{В каждом маленьком ребёнке - Машина времени}%В оглавление
+\subsection*{В каждом маленьком ребёнке} 
+
+\addcontentsline{toc}{subsection}{На далёкой Амазонке - В. Берковский, М. Синельникова}%В оглавление
+\subsection*{На далёкой Амазонке}
+ 
+\addcontentsline{toc}{subsection}{Простая песенка - Сергей Матвеенко}%В оглавление
+\subsection*{Простая песенка}
+ 
+\addcontentsline{toc}{subsection}{Большой секрет - С. Никитин (Ст. Юна Мориц)}%В оглавление
+\subsection*{Большой секрет}
+
+\addcontentsline{toc}{subsection}{Дружба крепкая - Б. Савельев (ст. М. Пляцковский)}%В оглавление
+\subsection*{Дружба крепкая}
+ 
+\addcontentsline{toc}{subsection}{Землю обмотали - Е. Птичкин (ст. М Пляцковский)}%В оглавление
+\subsection*{Землю обмотали}
+
+\addcontentsline{toc}{subsection}{Дорога добра - М. Минков (ст. Юрий Энтин)}%В оглавление
+\subsection*{Дорога добра}
+
+\addcontentsline{toc}{subsection}{33 коровы - М. Дунаевский (ст. Наум Олев)}%В оглавление
+\subsection*{33 коровы}
+ 
+\addcontentsline{toc}{subsection}{Непогода - М. Дунаевский (ст. Наум Олев)}%В оглавление
+\subsection*{Непогода}
+
+\addcontentsline{toc}{subsection}{Алые паруса}%В оглавление
+\subsection*{Алые паруса}
+
+\newpage
+\addcontentsline{toc}{subsection}{Мамонты}%В оглавление
+\subsection*{Мамонты}
+
+\addcontentsline{toc}{section}{Песни сов}%В оглавление
+\section*{\centerline{Песни сов}}
+
+\addcontentsline{toc}{subsection}{Город-сказка - Танцы Минус}%В оглавление
+\subsection*{Город-сказка, город-мечта}
+ 
+\addcontentsline{toc}{subsection}{Сансара - Баста}%В оглавление
+\subsection*{Сансара}
+
+\addcontentsline{toc}{subsection}{Ты, да я, да мы с тобой}%В оглавление
+\subsection*{Ты, да я, да мы с тобой}
+
+\addcontentsline{toc}{subsection}{Алые паруса - В. Ланцберг}%В оглавление
+\subsection*{Алые паруса - В. Ланцберг}
+
+\addcontentsline{toc}{subsection}{Школа, тренировка - Тимур Шаов}%В оглавление
+\subsection*{Школа, тренировка}
+
+\addcontentsline{toc}{subsection}{Оранжевое настроение - Чайф}%В оглавление
+\subsection*{Оранжевое настроение}
+ 
+\addcontentsline{toc}{subsection}{Дыхание - Наутилус Помпилиус}%В оглавление
+\subsection*{Дыхание}
+ 
+\addcontentsline{toc}{subsection}{Звезда по имени солнце - Виктор Цой}%В оглавление
+\subsection*{Звезда по имени солнце}
+ 
+\addcontentsline{toc}{subsection}{Кукушка - Виктор Цой}%В оглавление
+\subsection*{Кукушка}
+
+\addcontentsline{toc}{subsection}{Группа крови - Виктор Цой}%В оглавление
+\subsection*{Группа крови}
+
+\addcontentsline{toc}{subsection}{Небо славян - Алиса }%В оглавление
+\subsection*{Небо славян }
+ 
+\addcontentsline{toc}{subsection}{Потерянный рай - Ария}%В оглавление
+\subsection*{Потерянный рай}
+
+\addcontentsline{toc}{subsection}{Город золотой - Аквариум}%В оглавление
+\subsection*{Город золотой}
+
+\addcontentsline{toc}{subsection}{Однажды мир прогнется под нас - Машина Времени}%В оглавление
+\subsection*{Однажды мир прогнется под нас}
+
+\addcontentsline{toc}{subsection}{Враг - Кошка Сашка}%В оглавление
+\subsection*{Враг}
+ 
+\addcontentsline{toc}{subsection}{Спички - Анимация}%В оглавление
+\subsection*{Спички}
+ 
+\addcontentsline{toc}{subsection}{Луч солнца золотого - Муслим Магомаев(ст. Юрий Энтин)}%В оглавление
+\subsection*{Луч солнца золотого}
+ 
+\addcontentsline{toc}{subsection}{Маленький - Дайте танк (!)}%В оглавление
+\subsection*{Маленький}
+ 
+\addcontentsline{toc}{subsection}{Баллада о борьбе - Владимир Высоцкий}%В оглавление
+\subsection*{Баллада о борьбе}
+ 
+\addcontentsline{toc}{subsection}{Весеннее танго - Валерий Миляев}%В оглавление
+\subsection*{Весеннее танго}
+ 
+\addcontentsline{toc}{subsection}{Птенцы - Леонид Ваксман (ст. Д. Воронков)}%В оглавление
+\subsection*{Птенцы}
+
+\addtocontents{toc}{\protect\newpage}
+\addcontentsline{toc}{section}{Военные песни}%В оглавление
+
+\addcontentsline{toc}{subsection}{Атланты - Александр Городницкий}%В оглавление
+\subsection*{Атланты}
+
+\addcontentsline{toc}{subsection}{День победы - Давид Тухманов (ст. В. Харитонов)}%В оглавление
+\subsection*{День победы}
+ 
+\addcontentsline{toc}{subsection}{Журавли - Марк Бернес}%В оглавление
+\subsection*{Марк Бернес - Журавли}
+ 
+\addcontentsline{toc}{subsection}{Темная ночь - Марк Бернес}%В оглавление
+\subsection*{Темная ночь}
+
+\addcontentsline{toc}{subsection}{На поле танки грохотали}%В оглавление
+\subsection*{На поле танки грохотали}
+
+\addcontentsline{toc}{subsection}{О той весне - МультиКейс (ст. Елена Плотникова) }%В оглавление
+\subsection*{О той весне}
+
+\addcontentsline{toc}{subsection}{От героев былых времен - Р. Хозак (ст. Е. Агранович)}%В оглавление
+\subsection*{От героев былых времен}
+ 
+\addcontentsline{toc}{subsection}{В землянке - К. Листов (ст. А. Сурков)}%В оглавление
+\subsection*{В землянке}
+
+\addcontentsline{toc}{subsection}{Идет солдат по городу - В. Шаинский (ст. М. Танич)}%В оглавление
+\subsection*{Идет солдат по городу}
+
+\addcontentsline{toc}{subsection}{Первым делом самолёты - ст. А. Фатьянов}%В оглавление
+\subsection*{Первым делом самолёты}
+ 
+\addcontentsline{toc}{subsection}{Три танкиста - Братья Покрасс (ст. Б. Ласкин)}%В оглавление
+\subsection*{Три танкиста}
+ 
+\addcontentsline{toc}{subsection}{Ленинградцы - И. Шварц (ст. В.Коростылев)}%В оглавление
+\subsection*{Ленинградцы}
+ 
+\addcontentsline{toc}{subsection}{Песня 10-го десантного батальона - Б. Окуджава}%В оглавление
+\subsection*{Песня 10-го десантного батальона}
+ 
+\addcontentsline{toc}{subsection}{Эх, дороги - А. Новиков (ст. Л. Ошанин)}%В оглавление
+\subsection*{Эх, дороги}
+
+\addcontentsline{toc}{subsection}{Туман - Максим Леонидов}%В оглавление
+\subsection*{Туман}
+ 
+\addcontentsline{toc}{section}{Походные песни}%В оглавление
+
+\addcontentsline{toc}{subsection}{Пора в дорогу, старина - Владимир Ланцберг}%В оглавление
+\subsection*{Пора в дорогу, старина}
+ 
+\addcontentsline{toc}{subsection}{Вершина - Владимир Высоцкий}%В оглавление
+\subsection*{Вершина}
+
+\addcontentsline{toc}{subsection}{Ночная дорога - Юрий Визбор}%В оглавление
+\subsection*{Ночная дорога}
+ 
+\addcontentsline{toc}{subsection}{Милая моя - Юрий Визбор}%В оглавление
+\subsection*{Милая моя}
+ 
+\addcontentsline{toc}{subsection}{Перевал - Юрий Визбор}%В оглавление
+\subsection*{Перевал}
+ 
+\addcontentsline{toc}{subsection}{Вечер бродит - Ада Якушева}%В оглавление
+\subsection*{Вечер бродит}
+ 
+\addcontentsline{toc}{subsection}{Лесные леди - Нелли Путина}%В оглавление
+\subsection*{Лесные леди}\begin{spacing}{0.5}
+
+\addcontentsline{toc}{subsection}{Люди идут по свету - Р. Ченборисова (ст. И. Сидоров)}%В оглавление
+\subsection*{Люди идут по свету}
+
+\addcontentsline{toc}{subsection}{Изгиб гитары желтой - Олег Митяев}%В оглавление
+\subsection*{Изгиб гитары желтой}
+
+\addcontentsline{toc}{subsection}{Дым костра – Александр Евстигнеев}%В оглавление
+\subsection*{Дым костра}
+ 
+\addcontentsline{toc}{subsection}{Русская дорога – Игорь растеряев}%В оглавление
+\subsection*{Русская дорога}
+
+\addtocontents{toc}{\protect\newpage}
+\addcontentsline{toc}{section}{Начинающим}%В оглавление
+\section*{\centerline{Начинающим}}
+\addcontentsline{toc}{subsection}{Советы опытных гитаристов}%В оглавление
+\subsection*{Советы опытных гитаристов}
+
+\addcontentsline{toc}{subsection}{Гитара и постановка рук}%В оглавление
+\subsection*{Гитара и постановка рук}
+
+\addcontentsline{toc}{subsection}{Теория}%В оглавление
+\subsection*{Теория}
+
+\addcontentsline{toc}{subsection}{Устройство струн и ладов}%В оглавление
+\subsection*{Устройство струн и ладов}
+
+\addcontentsline{toc}{section}{Справочные материалы}%В оглавление
+\section*{\centerline{Справочные материалы}}
+\addcontentsline{toc}{subsection}{Бои}%В оглавление
+
+\addcontentsline{toc}{subsection}{Как читать справочные материалы}%В оглавление
+\subsection*{Как читать справочные материалы}
+
+\newpage
+\tableofcontents
+\newpage
+\begin{titlepage}
+   \begin{center}
+       \vspace*{3cm}
+       \textbf{\Large Песенник города мастеров}\\
+       {\large редакция 3}\\
+       \vspace{1cm}
+        Алексеева И.С., Васильев В.П.,\\
+         Шунько А.Е.\\
+        \vspace{2cm}
+        Федерация Следопытов Росиии\\ 
+        выражает благодарность\\
+        в создании песенника\\
+         следующим людям:\\
+        \medskip
+        Базарова И.Е., Казак Д.А., Казбан О.К.,\\
+        Речкалов М.К., Терехов А.А.\\
+        а так же вожатскому отряду «Муравейник» \\
+        и редакционному отделу ФСР
+       \vfill
+        Санкт-Петербург\\ 
+        2023
+   \end{center}
+\end{titlepage}
+
+\end{document}

@@ -1,0 +1,27 @@
+
+%for guitar tab
+\documentclass[]{article}
+
+\usepackage{guitarchordschemes}
+
+
+\usepackage{chordbox}
+\newcommand{\musSharp}{\texttt{\#}}
+
+\begin{document}
+
+ \chordscheme[
+    name      = G ,
+    position  = I,
+    finger    = {2/5:2, 3/6:3, 3/1:4},
+    %root      = {} ,
+    ring      = {6}
+  ]
+  \chordscheme[
+    name      = Am ,
+    position  = I,
+    finger    = {1/2:1, 2/4:2, 2/3:3},
+    %root      = {} ,
+    ring      = {5}
+  ]
+\end{document}
